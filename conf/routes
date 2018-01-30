@@ -15,8 +15,9 @@ GET     /greet/:last/:first          controllers.HomeController.greet(last: Stri
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
 GET     /books                      controllers.BooksController.index()
-GET     /books/create               controllers.BooksController.save()
-GET     /books/update               controllers.BooksController.update()
+GET     /books/create               controllers.BooksController.create()
+POST    /books/create               controllers.BooksController.save()
+POST    /books/edit/                controllers.BooksController.update()
 GET     /books/:id                  controllers.BooksController.show(id :  Integer)
 GET     /books/edit/:id             controllers.BooksController.edit(id :  Integer)
 GET     /books/delete/:id           controllers.BooksController.destroy(id: Integer)

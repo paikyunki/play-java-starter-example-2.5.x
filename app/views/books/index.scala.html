@@ -1,15 +1,27 @@
-@(books : Set[Book])
+@(books: Set[Book])
 
-<html>
-    <head>
-        <title>All Books</title>
-    </head>
-    <body>
-        <h1>All Books</h1>
+@main("Yunki's Play again") {
+    <h1>All Books</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
         @for(book <- books) {
-            <a href="#">@book.title</a>
-            <p>Price : @book.price</p>
-            <p>Author: @book.author</p>
+            <tr>
+                <td>@book.id</td>
+                <td><a href="@routes.BooksController.show(book.id)">@book.title</a></td>
+                <td>Price : @book.price</p></td>
+                <td>Author: @book.author</p></td>
+            </tr>
         }
-    </body>
-</html>
+
+            <a href="@routes.BooksController.create()">Create Book</a>
+        </tbody>
+    </table>
+}

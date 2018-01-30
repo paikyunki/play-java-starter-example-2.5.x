@@ -9,6 +9,8 @@ public class Book {
     public Integer price;
     public String author;
 
+    public Book() {}
+
     public Book(Integer id, String title, Integer price, String author) {
         this.id = id;
         this.title = title;
@@ -22,6 +24,8 @@ public class Book {
         books = new HashSet<Book>();
         books.add(new Book(1, "C++", 20, "ABC"));
         books.add(new Book(2, "Java", 30, "XYZ"));
+        books.add(new Book(3, "Play Framework", 20, "Dianne"));
+        books.add(new Book(4, "Angular 4", 30, "Brinda"));
     }
 
     public static HashSet<Book> allBooks() {

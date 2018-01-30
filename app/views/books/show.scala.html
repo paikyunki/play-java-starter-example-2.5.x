@@ -1,0 +1,13 @@
+@(book: Book)
+@import helper._
+
+@main("Create Book") {
+    <div class="container">
+        <h2>@book.title</h2>
+        <p>Price: @book.price</p>
+        <p>Author: @book.author</p>
+
+        <a href="@routes.BooksController.edit(book.id)">Edit</a>
+        <a href="@routes.BooksController.destroy(book.id)">Delete</a>
+</div>
+    }
