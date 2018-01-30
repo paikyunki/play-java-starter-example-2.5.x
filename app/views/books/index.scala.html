@@ -1,27 +1,29 @@
 @(books: Set[Book])
 
 @main("Yunki's Play again") {
-    <h1>All Books</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Author</th>
-            </tr>
-        </thead>
-        <tbody>
-        @for(book <- books) {
-            <tr>
-                <td>@book.id</td>
-                <td><a href="@routes.BooksController.show(book.id)">@book.title</a></td>
-                <td>Price : @book.price</p></td>
-                <td>Author: @book.author</p></td>
-            </tr>
-        }
+    <div class="container">
+        <h1>All Books</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(book <- books) {
+                    <tr>
+                        <td>@book.id</td>
+                        <td><a href="@routes.BooksController.show(book.id)">@book.title</a></td>
+                        <td>Price : @book.price </p></td>
+                        <td>Author: @book.author </p></td>
+                    </tr>
+                }
 
-            <a href="@routes.BooksController.create()">Create Book</a>
-        </tbody>
-    </table>
+                <a href="@routes.BooksController.create()">Create Book</a>
+            </tbody>
+        </table>
+    </div>
 }

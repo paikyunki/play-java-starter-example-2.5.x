@@ -1,8 +1,9 @@
 package models;
 
 import java.util.HashSet;
+import com.avaje.ebean.Model;
 
-public class Book {
+public class Book extends Model {
 
     public Integer id;
     public String title;
